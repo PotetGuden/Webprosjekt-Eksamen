@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meet the Team</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="top-bar">
+        <h1 id="project-title"> PRO 104 EKSAMEN GRUPPE 06</h1>
+    </header>
+
+    <div id="main-container">
+        <!-- ADD EXISTING USERS TO PROJECT -->
+        <div id="current-members-div"></div>
+        <div id="add-members">              
+                <div id="add-member-text">+ Legg til eksisterende brukere</div>
+                <select type="text" id="name-of-member" placeholder="Skriv inn medlemmens navn"></select>
+                <div id="add-member-btn-ok" onclick="handleAddMembers(event)">Legg til</div>
+        </div>
+        
+        <!-- CONTENT/ASSIGNMENTS -->
+        <div id="first-section" class="sections">
+            <div id="content-canvas">
+                <!--    -->
+                <div id="task1" class="content" >
+                    <div class="header-content">
+                        <h2>Gjøremål</h2>
+                        <div class="add-new-item-icon" ><b>+</b></div>
+                    </div>
+                </div>
+            
+                
+                <div id="add-new-content-box">
+                    + Legg til en ny oppgave
+                </div>
+
+                <!--contentBox-->
+
+            </div>
+
+            <div class="input-box-content">
+
+                <textarea type="text" id="task-title" cols="38" placeholder="Tittel..."></textarea><br>
+                <textarea name="description" id="description-box" cols="38" rows="6" placeholder="Beskrivelse av oppgaven..."></textarea><br>
+               
+                <div>
+                    Ansvarlige for oppgaven:
+                </div>
+    
+                <div>
+    
+                    <select id="drop-down-names" class="dropdown-menu-members">
+                        <option>Ingen</option>
+                    </select>
+    
+                    <p id="red-warning-text-drop-down" style="color:red"></p>
+               
+                </div>
+                
+                <h3>Velg tid og dato for prosjektet</h3><br>
+    
+                <div id="select-time-date-container">
+                    
+                    <div id="start-date-container">
+    
+                        <b>Prosjekt Start</b>
+                        <p>Tidspunkt:</p>
+                        <input type="time" id="select-start-time">
+                        <p>Dato:</p>
+                        <input type="date" id="select-start-date" >
+                        <p id="project-start-output"></p>
+                        
+                    </div>
+    
+                    <div id="end-date-container">
+                        <b>Prosjekt Slutt</b>
+                        <p>Tidspunkt:</p>
+                        <input type="time" id="select-end-time">
+                        <p>Dato:</p>
+                        <input type="date" id="select-end-date">
+                        <p id="project-end-output"></p>
+                    </div>
+    
+                </div>
+                <div class="done-button" >FERDIG</div>
+                <div id="update-done-button">OPPDATER</div>
+                <div id="back-button">TILBAKE</div>
+            </div>
+
+            
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div id="hamburger-icon" onclick="hamburgerMenuToggle(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="right-side-section">
+            
+            <div id="right-side-nav">
+                <div class="nav-bars">Kalender</div>
+                <div class="nav-bars">Lenker</div>
+                <div class="nav-bars">Mer</div>
+            </div>
+            <div id="right-side-content-div">
+                <!-- CALENDAR INNERHTML -->
+                <div id="right-side-calendar">
+                    <div class="date-picker"> <!-- https://github.com/TylerPottsDev/custom-date-picker -->
+                        <div class="selected-date"></div>
+                        <div class="dates">
+                            <div class="month">
+                                <div class="arrows prev-mth">&lt;</div>
+                                <div class="mth"></div>
+                                <div class="arrows next-mth">&gt;</div>
+                            </div>
+                
+                            <div class="days"></div>
+                        </div>
+                    </div><br>
+
+                    <div id="calendar-output"></div>
+                </div>
+                <!-- FILES INNERHTML -->
+                <div id="right-side-files">
+                    <input type="file" id="myFile" onchange="uploadFiles()">
+                    <p id="links-output"></p>
+                        <h3>Endre bakgrunnsfarge</h3>
+                        <div id="bakgrunn"></div>
+                </div>
+                <!-- LINKS INNERHTML -->
+                <div id="right-side-links">
+                    <div id="right-side-links-text">
+                        <textarea  id="right-side-links-text-area-title" placeholder="Tittel på lenken..." ></textarea>
+                        <textarea  id="right-side-links-text-area" placeholder="URL..." spellcheck="false" ></textarea>
+                        <button id="links-btn" >Legg til</button>
+                        <h3 id="right-side-links-header"><i>Ingen lenker her enda...</h3>
+                        <div id="output-links"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/localStorage.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/mainpage.js"></script>
+</body>
+</html>
